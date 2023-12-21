@@ -1,3 +1,4 @@
+
 import java.util.*;
 public class Phone_Dial {
     public static void main(String args[]) {
@@ -16,7 +17,7 @@ public class Phone_Dial {
         hmap.put(8, "tuv");
         hmap.put(9, "wxyz");
         hmap.put(0, "_");
-        int no = 28;
+        int no = 23;
         int tno=no;
         int rno=0;
         while(tno>0) {
@@ -24,11 +25,23 @@ public class Phone_Dial {
             rno = rno * 10 + digit;
             tno = tno / 10;
         }
+        ArrayList list=new ArrayList();
         while(rno>0)
         {
             int digit=rno%10;
             rno=rno/10;
-            System.out.println(digit+"----->"+(String) hmap.get(digit));
+            list.add((String) hmap.get(digit));
+        }
+        String w1=(String)list.get(0);
+        String w2=(String)list.get(1);
+
+        for (int i =0;i<w1.length();i++)
+        {
+            for(int j=0;j<w2.length();j++)
+            {
+               System.out.println(w1.charAt(i)+""+w2.charAt(j));
+            }
+
         }
 
     }
